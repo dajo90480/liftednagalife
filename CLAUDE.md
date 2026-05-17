@@ -10,6 +10,7 @@ Before generating any code, **always read the relevant file(s) in the `/docs` di
 
 Current docs:
 - `docs/ui.md` — UI component and date formatting standards
+- `docs/data-fetching.md` — data fetching rules: Server Components only, `/data` helpers, Drizzle ORM, user isolation
 
 ## Commands
 
