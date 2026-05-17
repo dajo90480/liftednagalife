@@ -4,6 +4,13 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 @AGENTS.md
 
+## IMPORTANT: Consult /docs before writing any code
+
+Before generating any code, **always read the relevant file(s) in the `/docs` directory first**. The docs define mandatory standards (component libraries, formatting conventions, patterns) that all generated code must follow. Do not rely on defaults or prior knowledge when a `/docs` file covers the topic.
+
+Current docs:
+- `docs/ui.md` — UI component and date formatting standards
+
 ## Commands
 
 ```bash
