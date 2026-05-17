@@ -27,7 +27,7 @@ export default function DashboardClient({ workouts }: { workouts: Workout[] }) {
           mode="single"
           selected={date}
           onSelect={(d) => { if (d) setDate(d); }}
-          initialFocus
+
         />
       </div>
 
