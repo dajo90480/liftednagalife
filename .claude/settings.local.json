@@ -12,7 +12,19 @@
       "Bash(npm run *)",
       "Bash(New-Item *)",
       "PowerShell(New-Item *)",
-      "Bash(npx shadcn@latest *)"
+      "Bash(npx shadcn@latest *)",
+      "Bash(git checkout *)",
+      "Bash(git pull *)",
+      "Bash(git stash *)",
+      "Bash(git merge *)",
+      "Bash(git restore *)",
+      "Bash(node *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(npx tsc *)",
+      "mcp__neon__run_sql",
+      "Bash(Get-ChildItem *)"
     ]
   },
   "enabledMcpjsonServers": [

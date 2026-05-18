@@ -1,11 +1,13 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { format, isSameDay } from 'date-fns';
 import { Calendar } from '@/components/ui/calendar';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
+import { Button, buttonVariants } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
 
 type Workout = {
   id: number;
@@ -55,6 +57,12 @@ export default function DashboardClient({ workouts }: { workouts: Workout[] }) {
                     {workout.completedAt && (
                       <Badge variant="secondary" className="font-bold text-xs">Completed</Badge>
                     )}
+                    <Link
+                      href={`/dashboard/workout/${workout.id}`}
+                      className={cn(buttonVariants({ variant: 'outline', size: 'sm' }), 'font-bold')}
+                    >
+                      Edit
+                    </Link>
                   </div>
                 </CardContent>
               </Card>

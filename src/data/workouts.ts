@@ -36,3 +36,32 @@ export async function getUserWorkoutWithExercises(workoutId: number) {
     .where(eq(workouts.id, workoutId))
     .orderBy(workoutExercises.order, sets.setNumber);
 }
+
+export async function getWorkoutById(workoutId: number, userId: string) {
+  const [row] = await db
+    .select()
+    .from(workouts)
+    .where(and(eq(workouts.id, workoutId), eq(workouts.userId, userId)));
+  return row ?? null;
+}
+
+export async function updateWorkout(
+  workoutId: number,
+  userId: string,
+  data: { name?: string; title?: string; startedAt: Date },
+) {
+  await db
+    .update(workouts)
+    .set({ ...data, updatedAt: new Date() })
+    .where(and(eq(workouts.id, workoutId), eq(workouts.userId, userId)));
+}
+
+export async function createWorkout(data: {
+  userId: string;
+  name?: string;
+  title?: string;
+  startedAt: Date;
+}) {
+  const [row] = await db.insert(workouts).values(data).returning({ id: workouts.id });
+  return row;
+}
