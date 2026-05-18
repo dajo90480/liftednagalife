@@ -6,8 +6,7 @@ import { format, isSameDay } from 'date-fns';
 import { Calendar } from '@/components/ui/calendar';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Button, buttonVariants } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
+import { Button } from '@/components/ui/button';
 
 type Workout = {
   id: number;
@@ -47,25 +46,23 @@ export default function DashboardClient({ workouts }: { workouts: Workout[] }) {
         ) : (
           <div className="space-y-3">
             {dayWorkouts.map((workout) => (
-              <Card key={workout.id} className="shadow-sm">
-                <CardContent className="py-4 px-5 flex items-start justify-between gap-4">
-                  <div className="space-y-1">
-                    <p className="font-black text-base tracking-tight">{workout.title ?? workout.name ?? 'Workout'}</p>
-                    <p className="text-sm text-muted-foreground">{format(workout.startedAt, 'do MMM yyyy, h:mm a')}</p>
-                  </div>
-                  <div className="flex flex-col items-end gap-1.5 shrink-0">
+              <Link
+                key={workout.id}
+                href={`/dashboard/workout/${workout.id}`}
+                className="block rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+              >
+                <Card className="shadow-sm transition-colors hover:bg-accent">
+                  <CardContent className="py-4 px-5 flex items-start justify-between gap-4">
+                    <div className="space-y-1">
+                      <p className="font-black text-base tracking-tight">{workout.title ?? workout.name ?? 'Workout'}</p>
+                      <p className="text-sm text-muted-foreground">{format(workout.startedAt, 'do MMM yyyy, h:mm a')}</p>
+                    </div>
                     {workout.completedAt && (
-                      <Badge variant="secondary" className="font-bold text-xs">Completed</Badge>
+                      <Badge variant="secondary" className="font-bold text-xs shrink-0">Completed</Badge>
                     )}
-                    <Link
-                      href={`/dashboard/workout/${workout.id}`}
-                      className={cn(buttonVariants({ variant: 'outline', size: 'sm' }), 'font-bold')}
-                    >
-                      Edit
-                    </Link>
-                  </div>
-                </CardContent>
-              </Card>
+                  </CardContent>
+                </Card>
+              </Link>
             ))}
           </div>
         )}
