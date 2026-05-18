@@ -13,6 +13,8 @@ Current docs:
 - `docs/data-fetching.md` — data fetching rules: Server Components only, `/data` helpers, Drizzle ORM, user isolation
 - `docs/auth.md` — auth standards: Clerk only, protected routes, getting the current user, userId sourcing
 - `docs/data-mutations.md` — mutation rules: Server Actions only, colocated `actions.ts`, typed params, Zod validation, `/data` helpers
+- `docs/server-components.md` — Server Component rules: params/searchParams must be awaited (Promise in Next.js 15+), async pages, notFound() usage
+- `docs/routing.md` — routing standards: all routes under /dashboard, protection via Clerk middleware only, App Router file conventions
 
 ## Commands
 

@@ -1,0 +1,1 @@
+- [Project Docs Registry](project_docs_registry.md) — all docs registered in CLAUDE.md with descriptions; use to avoid duplicates and match description style
