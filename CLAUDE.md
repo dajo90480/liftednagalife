@@ -11,6 +11,8 @@ Before generating any code, **always read the relevant file(s) in the `/docs` di
 Current docs:
 - `docs/ui.md` — UI component and date formatting standards
 - `docs/data-fetching.md` — data fetching rules: Server Components only, `/data` helpers, Drizzle ORM, user isolation
+- `docs/auth.md` — auth standards: Clerk only, protected routes, getting the current user, userId sourcing
+- `docs/data-mutations.md` — mutation rules: Server Actions only, colocated `actions.ts`, typed params, Zod validation, `/data` helpers
 
 ## Commands
 

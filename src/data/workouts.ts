@@ -36,3 +36,13 @@ export async function getUserWorkoutWithExercises(workoutId: number) {
     .where(eq(workouts.id, workoutId))
     .orderBy(workoutExercises.order, sets.setNumber);
 }
+
+export async function createWorkout(data: {
+  userId: string;
+  name?: string;
+  title?: string;
+  startedAt: Date;
+}) {
+  const [row] = await db.insert(workouts).values(data).returning({ id: workouts.id });
+  return row;
+}
